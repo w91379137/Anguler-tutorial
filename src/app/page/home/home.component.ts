@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CounterViewModel } from 'src/app/component/counter/counter.viewmodel';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  vm = new CounterViewModel();
+
+  constructor() {
+    this.vm.value = 100;
+  }
 
   ngOnInit(): void {
   }

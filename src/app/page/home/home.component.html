@@ -2,6 +2,10 @@
 <div style="background-color:aqua ;">
   <p>home works!</p>
 
-  <app-counter></app-counter>
+  <h5>{{ vm.value }}</h5>
+
+  <app-counter
+    [viewmodel]="vm"
+  ></app-counter>
 </div>
 

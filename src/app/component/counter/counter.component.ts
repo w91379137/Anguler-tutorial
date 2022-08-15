@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CounterViewModel } from './counter.viewmodel';
 
 @Component({
   selector: 'app-counter',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CounterComponent implements OnInit {
 
-  value = 0
+  @Input()
+  viewmodel: CounterViewModel;
 
   // ====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====
 
@@ -19,10 +21,10 @@ export class CounterComponent implements OnInit {
 
   // ====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====
   onAddClicked(): void {
-    this.value += 1
+    this.viewmodel.value += 1
   }
 
   onMinusClicked(): void {
-    this.value -= 1
+    this.viewmodel.value -= 1
   }
 }
