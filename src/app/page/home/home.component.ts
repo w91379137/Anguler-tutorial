@@ -10,11 +10,20 @@ export class HomeComponent implements OnInit {
 
   vm = new CounterViewModel();
 
+  // ====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====
+
   constructor() {
     this.vm.value = 100;
   }
 
   ngOnInit(): void {
+  }
+
+  // ====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====
+  onEmit(event): void {
+
+    console.log('onEmit', event)
+
   }
 
 }

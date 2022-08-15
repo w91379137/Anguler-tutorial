@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CounterViewModel } from './counter.viewmodel';
 
 @Component({
@@ -10,6 +10,9 @@ export class CounterComponent implements OnInit {
 
   @Input()
   viewmodel: CounterViewModel;
+
+  @Output()
+  submit = new EventEmitter<number>();
 
   // ====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====
 
@@ -26,5 +29,9 @@ export class CounterComponent implements OnInit {
 
   onMinusClicked(): void {
     this.viewmodel.value -= 1
+  }
+
+  onSubmitClicked(): void {
+    this.submit.emit(this.viewmodel.value);
   }
 }
