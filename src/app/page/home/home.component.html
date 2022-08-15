@@ -1,0 +1,12 @@
+
+<div style="background-color:aqua ;">
+  <p>home works!</p>
+
+  <h5>{{ vm.value }}</h5>
+
+  <app-counter
+    [viewmodel]="vm"
+    (submit)="onEmit($event)"
+  ></app-counter>
+</div>
+
