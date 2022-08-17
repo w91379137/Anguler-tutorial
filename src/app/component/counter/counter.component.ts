@@ -14,21 +14,26 @@ export class CounterComponent implements OnInit {
   @Output()
   submit = new EventEmitter<number>();
 
+  @Output()
+  valueChange = new EventEmitter<number>();
+
   // ====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====
 
   constructor() { }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
 
   // ====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====
   onAddClicked(): void {
-    this.viewmodel.value += 1
+    const change = 5
+    this.viewmodel.value += change
+    this.valueChange.emit(change);
   }
 
   onMinusClicked(): void {
-    this.viewmodel.value -= 1
+    const change = -5
+    this.viewmodel.value += change
+    this.valueChange.emit(change);
   }
 
   onSubmitClicked(): void {

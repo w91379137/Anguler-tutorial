@@ -1,12 +1,26 @@
 
 <div style="background-color:aqua ;">
-  <p>home works!</p>
-
-  <h5>{{ vm.value }}</h5>
+  <p>=== home ===</p>
 
   <app-counter
-    [viewmodel]="vm"
+    [viewmodel]="viewmodel.r1"
     (submit)="onEmit($event)"
+    (valueChange)="onRchange($event)"
   ></app-counter>
+
+  <app-counter
+  [viewmodel]="viewmodel.g1"
+  (submit)="onEmit($event)"
+  (valueChange)="onGchange($event)"
+  ></app-counter>
+
+  <app-counter
+  [viewmodel]="viewmodel.b1"
+  (submit)="onEmit($event)"
+  (valueChange)="onBchange($event)"
+  ></app-counter>
+
+  <div style="width: 100px; height: 100px" [ngStyle]="{'background-color': color1()}">1</div>
+  <div style="width: 100px; height: 100px" [ngStyle]="{'background-color': color2()}">2</div>
 </div>
 

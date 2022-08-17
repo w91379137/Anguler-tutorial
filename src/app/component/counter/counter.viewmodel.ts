@@ -1,4 +1,8 @@
 
 export class CounterViewModel {
-  value = 0;
+
+  constructor(
+    public value = 0
+  ) { }
+  
 }
