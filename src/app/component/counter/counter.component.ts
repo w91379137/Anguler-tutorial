@@ -27,13 +27,15 @@ export class CounterComponent implements OnInit {
 
   // ====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====
   onAddClicked(): void {
-    this.viewmodel.value += 1
-    this.valueChange.emit(1);
+    const change = 10
+    this.viewmodel.value += change
+    this.valueChange.emit(change);
   }
 
   onMinusClicked(): void {
-    this.viewmodel.value -= 1
-    this.valueChange.emit(-1);
+    const change = -10
+    this.viewmodel.value += change
+    this.valueChange.emit(change);
   }
 
   onSubmitClicked(): void {

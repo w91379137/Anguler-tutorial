@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CounterViewModel } from 'src/app/component/counter/counter.viewmodel';
+import { HomeViewModel } from './home.viewmodel';
 
 @Component({
   selector: 'app-home',
@@ -8,22 +8,38 @@ import { CounterViewModel } from 'src/app/component/counter/counter.viewmodel';
 })
 export class HomeComponent implements OnInit {
 
-  vm = new CounterViewModel();
+  viewmodel = new HomeViewModel();
 
   // ====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====
 
-  constructor() {
-    this.vm.value = 100;
-  }
+  constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  // ====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====
+
+  color1(): string {
+    return `rgb(${this.viewmodel.r1.value}, ${this.viewmodel.g1.value}, ${this.viewmodel.b1.value})`
+  }
+  color2(): string {
+    return `rgb(${this.viewmodel.r2}, ${this.viewmodel.g2}, ${this.viewmodel.b2})`
   }
 
   // ====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====
   onEmit(event): void {
-
     console.log('onEmit', event)
+  }
 
+  onRchange(event): void {
+    this.viewmodel.r2 += event
+  }
+
+  onGchange(event): void {
+    this.viewmodel.g2 += event
+  }
+
+  onBchange(event): void {
+    this.viewmodel.b2 += event
   }
 
 }
