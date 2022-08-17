@@ -14,6 +14,9 @@ export class CounterComponent implements OnInit {
   @Output()
   submit = new EventEmitter<number>();
 
+  @Output()
+  valueChange = new EventEmitter<number>();
+
   // ====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====
 
   constructor() { }
@@ -25,10 +28,12 @@ export class CounterComponent implements OnInit {
   // ====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====
   onAddClicked(): void {
     this.viewmodel.value += 1
+    this.valueChange.emit(1);
   }
 
   onMinusClicked(): void {
     this.viewmodel.value -= 1
+    this.valueChange.emit(-1);
   }
 
   onSubmitClicked(): void {

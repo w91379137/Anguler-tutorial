@@ -1,12 +1,23 @@
 
 <div style="background-color:aqua ;">
-  <p>home works!</p>
-
-  <h5>{{ vm.value }}</h5>
+  <p>=== home ===</p>
 
   <app-counter
     [viewmodel]="vm"
     (submit)="onEmit($event)"
   ></app-counter>
+
+  <app-counter
+  [viewmodel]="vm"
+  (submit)="onEmit($event)"
+  ></app-counter>
+
+  <app-counter
+  [viewmodel]="vm"
+  (submit)="onEmit($event)"
+  ></app-counter>
+
+  <div style="width: 100px; height: 100px">1</div>
+  <div style="width: 100px; height: 100px">2</div>
 </div>
 
