@@ -24,14 +24,18 @@ export class CounterComponent implements OnInit {
   ngOnInit(): void { }
 
   // ====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====.====
+  abc() {
+    return 'hhhh'
+  }
+
   onAddClicked(): void {
-    const change = 5
+    const change = 20
     this.viewmodel.value += change
     this.valueChange.emit(change);
   }
 
   onMinusClicked(): void {
-    const change = -5
+    const change = -20
     this.viewmodel.value += change
     this.valueChange.emit(change);
   }

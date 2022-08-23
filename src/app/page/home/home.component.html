@@ -20,7 +20,9 @@
   (valueChange)="onBchange($event)"
   ></app-counter>
 
-  <div style="width: 100px; height: 100px" [ngStyle]="{'background-color': color1()}">1</div>
-  <div style="width: 100px; height: 100px" [ngStyle]="{'background-color': color2()}">2</div>
+  <button (click)="changeShow()">改變</button>
+
+  <div style="width: 100px; height: 100px" [ngClass]="{'hidden': isHidden()}" [ngStyle]="{'background-color': color1()}">1</div>
+  <div style="width: 100px; height: 100px" [ngClass]="{'hidden': isHidden()}" [ngStyle]="{'background-color': color2()}">2</div>
 </div>
 
