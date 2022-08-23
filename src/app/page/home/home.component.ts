@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit, 持有機票, OnDestroy {
 
   ngOnInit(): void {
     console.log('HomeComponent ngOnInit')
-   }
+  }
 
   告知未登機() {
     console.log('告知未登機')
